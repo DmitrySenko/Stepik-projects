@@ -1,5 +1,5 @@
 #Ссылка на задание: https://stepik.org/lesson/13238/step/10?unit=3424
-
+```
 a = input().split()
 place = int(a[1])
 cnt = 0.000
@@ -17,3 +17,4 @@ for i in reversed(lst):
         cnt += price * place
         break
 print(round(cnt, 3))
+```
