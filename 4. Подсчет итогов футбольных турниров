@@ -1,0 +1,30 @@
+Ссылка на задание: https://stepik.org/lesson/3380/step/1?unit=963
+
+a = int(input())
+dct = {}
+for i in range(a):
+    line = input().split(';')
+    if line[0] not in dct:
+        dct[line[0]] = [0, 0, 0, 0, 0]
+    if line[2] not in dct:
+        dct[line[2]] = [0, 0, 0, 0, 0]
+    if line[0] in dct and line[2] in dct:
+        lst1 = dct.get(line[0])
+        lst1[0] = int(lst1[0]) + 1
+        lst2 = dct.get(line[2])
+        lst2[0] = int(lst2[0]) + 1
+        if int(line[1]) > int(line[3]):
+            lst1[1] = int(lst1[1]) + 1
+            lst2[3] = int(lst2[3]) + 1
+            lst1[4] = int(lst1[4]) + 3
+        elif int(line[1]) < int(line[3]):
+            lst1[3] = int(lst1[3]) + 1
+            lst2[1] = int(lst2[1]) + 1
+            lst2[4] = int(lst2[4]) + 3
+        else:
+            lst1[2] = int(lst1[2]) + 1
+            lst2[2] = int(lst2[2]) + 1
+            lst1[4] = int(lst1[4]) + 1
+            lst2[4] = int(lst2[4]) + 1
+for i in dct:
+    print(i + ':', *dct.get(i))
