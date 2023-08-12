@@ -1,0 +1,6 @@
+def modify_list(l):
+    b = l.copy()
+    l.clear()
+    for i in b:
+        if i % 2 == 0:
+            l.append(i // 2)
