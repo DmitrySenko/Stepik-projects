@@ -1,0 +1,19 @@
+#Ссылка на задание: https://stepik.org/lesson/13238/step/10?unit=3424
+
+a = input().split()
+place = int(a[1])
+cnt = 0.000
+lst = []
+for i in range (int(a[0])):
+    b = input().split()
+    lst.append(b)
+lst = sorted(lst, key = lambda x: int(x[0]) / int(x[1]))
+for i in reversed(lst):
+    price = int(i[0]) / int(i[1])
+    if  int(i[1]) <= place:
+        cnt += int(i[0])
+        place -= int(i[1])
+    else:
+        cnt += price * place
+        break
+print(round(cnt, 3))
