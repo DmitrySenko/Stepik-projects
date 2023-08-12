@@ -1,0 +1,15 @@
+Ссылка на задание: https://stepik.org/lesson/3380/step/3?unit=963
+
+a = int(input())
+st1 = set()
+st2 = set()
+for i in range(a):
+    st1.add(input().lower())
+b = int(input())
+for i in range(b):
+    i = input()
+    for j in i.split():
+        st2.add(j.lower())
+st3 = set(st2 - st1)
+for i in st3:
+    print(i)
