@@ -1,0 +1,19 @@
+Ссылка на задание: https://stepik.org/lesson/13238/step/11?unit=3424
+
+a = int(input())
+lst = []
+cnt = 0
+for i in range(1, a + 1):
+    if cnt + i * 2 + 1 < a:
+        lst.append(i)
+        cnt += i
+    elif cnt + i * 2 + 1 == a:
+        lst.append(i)
+        lst.append(i + 1)
+        break
+    elif cnt + i * 2 + 1 > a:
+        lst.append(a - cnt)
+        cnt += a - cnt
+        break
+print(len(lst))
+print(*lst)
