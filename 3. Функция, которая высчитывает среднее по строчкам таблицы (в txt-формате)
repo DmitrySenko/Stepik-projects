@@ -1,0 +1,20 @@
+Ссылка на задание: https://stepik.org/lesson/3363/step/4?unit=1135
+
+a = open("D:\Downloads\dataset_3363_4.txt", 'r')
+b = open("D:\Downloads\dataset_3363_41.txt", 'w')
+students = 0
+math = 0
+phys = 0
+rus = 0
+line = a.readlines()
+for c in line:
+    c = c.split(';')
+    students += 1
+    average = str((int(c[1]) + int(c[2]) + int(c[3])) / 3)
+    math += int(c[1])
+    phys += int(c[2])
+    rus += int(c[3])
+    b.write(str(average) + '\n')
+a.close()
+b.write(str(math / students) + ' ' + str(phys / students) + ' ' + str(rus / students))
+b.close()
